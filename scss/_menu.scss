@@ -122,7 +122,8 @@
     @include easeOut;
 
     &:hover {
-      color: $secondary-color;
+      color: chartreuse;
+      transform: scale(1.25);
     }
   }
 }
