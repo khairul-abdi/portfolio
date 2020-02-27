@@ -8,3 +8,4 @@
 - NPM Package Manager
 - JavaScript
 - Git
+- Github Pages
