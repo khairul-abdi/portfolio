@@ -1,6 +1,4 @@
-# portfolio
-
-### [My Portfolio](https://www.google.com 'Click To View')
+# [My Portfolio](https://www.google.com 'Click To View')
 
 ### This app uses:
 
