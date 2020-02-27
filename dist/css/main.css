@@ -143,6 +143,9 @@ header {
 .text-secondary {
   color: #eece1a; }
 
+.link {
+  color: #eece1a; }
+
 main {
   padding: 4rem;
   min-height: calc(100vh - 60px); }
