@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "main": "index.js",
+  "description": "",
   "homepage": "https://khairul-abdi.github.io/portfolio",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
