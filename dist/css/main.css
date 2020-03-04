@@ -53,7 +53,7 @@
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
-      background: url("../img/photo.jpg");
+      background: url("../images/photo.jpg");
       width: 250px;
       height: 250px;
       border-radius: 50%;
@@ -102,7 +102,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-    background: url(../img/background.jpg);
+    background: url(../images/background.jpg);
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img:after {
@@ -271,7 +271,7 @@ main {
     height: 25vh;
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
-      background: url("../img/photo-small.jpg");
+      background: url("../images/photo-small.jpg");
       width: 150px;
       height: 150px; }
   .about-info {
