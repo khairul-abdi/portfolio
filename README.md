@@ -9,3 +9,4 @@
 - JavaScript
 - Git
 - Github Pages
+- Light Box
