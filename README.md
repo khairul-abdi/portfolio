@@ -1,4 +1,4 @@
-# [My Portfolio](https://khairul-abdi.github.io/portfolio/ 'Click To View')
+# [My Portfolio](https://github.com/khairul-abdi/Portfolio 'Click To View')
 
 ### This app uses:
 
