@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "description": "",
-  "homepage": "https://khairul-abdi.github.io",
+  "homepage": "https://khairul-abdi.github.io/portfolio",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
