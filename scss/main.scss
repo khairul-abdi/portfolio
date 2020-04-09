@@ -63,11 +63,34 @@ main {
     a {
       padding: 0.4rem;
       @include easeOut;
-
       &:hover {
         color: $secondary-color;
       }
     }
+
+    a.nav-logo {
+      svg {
+        margin-bottom: -4px;
+        height: 32px;
+        width: auto;
+      }
+    }
+
+    a.nav-logo.nav-white {
+      svg {
+        path {
+          fill: white;
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            @include easeOut;
+            fill: $secondary-color;
+          }
+        }
+      }
+    }  
   }
 
   &#home {
