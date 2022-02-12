@@ -8,7 +8,7 @@
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
   },
-  "author": "Khairul Abdi Dongoran",
+  "author": "Diah Puja Kusuma",
   "license": "MIT",
   "dependencies": {
     "gh-pages": "^2.2.0",
