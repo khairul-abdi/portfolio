@@ -1,0 +1,27 @@
+{
+  "name": "Khairul Abdi Dongoran Portfolio",
+  "short_name": "Khairul Abdi",
+  "icons": [
+    {
+      "src": "./favicon.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#0b1018",
+  "background_color": "#0b1018",
+  "display": "standalone"
+}
