@@ -5,7 +5,7 @@ export const profile = {
   phone: "085358316708",
   phoneDisplay: "0853-5831-6708",
   email: "kabdi384@gmail.com",
-  portfolio: "https://khairul-abdi.netlify.app",
+  portfolio: "https://khairul-abdi-dongoran.com",
   github: "https://github.com/khairul-abdi",
   linkedin: "https://www.linkedin.com/in/khairul-abdi-dongoran",
   whatsapp: "https://api.whatsapp.com/send?phone=6285358316708",
