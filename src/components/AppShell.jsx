@@ -3,13 +3,14 @@ import { useEffect, useState } from "react";
 import { profile } from "../data/portfolio.js";
 
 const navigation = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "work", label: "Work" },
-  { id: "contact", label: "Contact" },
+  { id: "home", label: "home" },
+  { id: "about", label: "about" },
+  { id: "work", label: "work" },
+  { id: "articles", label: "articles" },
+  { id: "contact", label: "contact" },
 ];
 
-export function AppShell({ children, route }) {
+export function AppShell({ children, route, locale, t, currentPath }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -19,13 +20,13 @@ export function AppShell({ children, route }) {
   return (
     <div className="app-shell">
       <header className="site-header">
-        <a className="brand" href="#/home" aria-label="Go to home">
+        <a className="brand" href={`#/${locale}/home`} aria-label={t.nav.home}>
           <span className="brand-mark">
             <img src="favicon.png" alt="" />
           </span>
           <span>
             <strong>Khairul Abdi Dongoran</strong>
-            <small>Fullstack Developer</small>
+            <small>{t.profile.title}</small>
           </span>
         </a>
 
@@ -34,16 +35,25 @@ export function AppShell({ children, route }) {
             <a
               key={item.id}
               className={route === item.id ? "active" : ""}
-              href={`#/${item.id}`}
+              href={`#/${locale}/${item.id}`}
             >
-              {item.label}
+              {t.nav[item.label]}
             </a>
           ))}
         </nav>
 
+        <div className="language-switcher" aria-label="Language switcher">
+          <a className={locale === "id" ? "active" : ""} href={`#/id/${currentPath}`}>
+            ID
+          </a>
+          <a className={locale === "en" ? "active" : ""} href={`#/en/${currentPath}`}>
+            EN
+          </a>
+        </div>
+
         <a className="header-cta" href={`mailto:${profile.email}`}>
           <Mail size={18} />
-          <span>Hire Me</span>
+          <span>{t.nav.hire}</span>
         </a>
 
         <button
@@ -61,7 +71,7 @@ export function AppShell({ children, route }) {
 
       <footer className="site-footer">
         <span>Khairul Abdi Dongoran</span>
-        <span>Fullstack Developer | Backend Developer | Golang Developer</span>
+        <span>{t.footer}</span>
       </footer>
     </div>
   );

@@ -22,23 +22,20 @@ const contactCards = [
   },
 ];
 
-export function Contact() {
+export function Contact({ t }) {
   return (
     <>
       <section className="contact-hero section">
         <div>
-          <span className="eyebrow">Contact</span>
-          <h1>Need a backend engineer for APIs, payment systems, or scalable services?</h1>
-          <p>
-            Reach out through email, WhatsApp, LinkedIn, or GitHub. This page
-            uses direct working links instead of a fake contact form.
-          </p>
+          <span className="eyebrow">{t.contact.eyebrow}</span>
+          <h1>{t.contact.title}</h1>
+          <p>{t.contact.description}</p>
           <div className="hero-actions">
             <a className="btn primary" href={`mailto:${profile.email}`}>
-              <Mail size={18} /> Send Email
+              <Mail size={18} /> {t.contact.sendEmail}
             </a>
             <a className="btn secondary" href={profile.whatsapp} target="_blank" rel="noreferrer">
-              <MessageCircle size={18} /> WhatsApp
+              <MessageCircle size={18} /> {t.common.whatsapp}
             </a>
           </div>
         </div>

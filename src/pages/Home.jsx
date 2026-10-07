@@ -8,46 +8,30 @@ import {
   ShieldCheck,
   Workflow,
 } from "lucide-react";
-import { profile, skills, stats } from "../data/portfolio.js";
+import { profile, skills } from "../data/portfolio.js";
 import { SectionHeader } from "../components/SectionHeader.jsx";
 
-const highlights = [
-  {
-    icon: Server,
-    title: "Backend systems",
-    text: "REST APIs, gRPC services, PostgreSQL, Redis, and production-ready service boundaries.",
-  },
-  {
-    icon: Workflow,
-    title: "Distributed architecture",
-    text: "Microservices, event-driven flows with Kafka/RabbitMQ, and clean architecture practices.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Fintech reliability",
-    text: "Secure payment gateway services, token auth, request signatures, routing, and observability.",
-  },
-];
+const highlightIcons = [Server, Workflow, ShieldCheck];
 
-export function Home() {
+export function Home({ locale, t }) {
   return (
     <>
       <section className="hero section">
         <div className="hero-copy">
           <div className="status-pill">
             <span />
-            Available for backend and fullstack roles
+            {t.profile.availability}
           </div>
           <h1>{profile.name}</h1>
-          <p className="hero-title">{profile.title}</p>
-          <p className="hero-summary">{profile.summary}</p>
+          <p className="hero-title">{t.profile.title}</p>
+          <p className="hero-summary">{t.profile.summary}</p>
 
           <div className="hero-actions">
-            <a className="btn primary" href="#/work">
-              View Work <ArrowRight size={18} />
+            <a className="btn primary" href={`#/${locale}/work`}>
+              {t.common.viewWork} <ArrowRight size={18} />
             </a>
             <a className="btn secondary" href={`mailto:${profile.email}`}>
-              Contact Me
+              {t.common.contactMe}
             </a>
           </div>
 
@@ -67,42 +51,39 @@ export function Home() {
         <aside className="hero-panel" aria-label="Profile summary">
           <img src="images/photo.png" alt="Khairul Abdi Dongoran" />
           <div>
-            <span className="eyebrow">Based in</span>
+            <span className="eyebrow">{t.profile.basedIn}</span>
             <h2>
               <MapPin size={22} />
               {profile.location}
             </h2>
-            <p>
-              Building scalable services for fintech, digital transformation,
-              and real-time monitoring platforms.
-            </p>
+            <p>{t.profile.heroPanel}</p>
           </div>
         </aside>
       </section>
 
       <section className="stats-grid section compact">
-        {stats.map((item) => (
-          <div className="stat-card" key={item.label}>
-            <strong>{item.value}</strong>
-            <span>{item.label}</span>
+        {t.home.stats.map(([value, label]) => (
+          <div className="stat-card" key={label}>
+            <strong>{value}</strong>
+            <span>{label}</span>
           </div>
         ))}
       </section>
 
       <section className="section">
         <SectionHeader
-          eyebrow="Engineering focus"
-          title="Systems that are readable, observable, and built to survive production traffic."
-          description="The portfolio is now centered around backend credibility, fintech experience, and technical depth."
+          eyebrow={t.home.focusEyebrow}
+          title={t.home.focusTitle}
+          description={t.home.focusDescription}
         />
         <div className="feature-grid">
-          {highlights.map((item) => {
-            const Icon = item.icon;
+          {t.home.highlights.map(([title, text], index) => {
+            const Icon = highlightIcons[index];
             return (
-              <article className="feature-card" key={item.title}>
+              <article className="feature-card" key={title}>
                 <Icon size={26} />
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </article>
             );
           })}
@@ -111,8 +92,8 @@ export function Home() {
 
       <section className="section">
         <SectionHeader
-          eyebrow="Core stack"
-          title="Technologies used across backend, fullstack, infrastructure, and delivery."
+          eyebrow={t.home.stackEyebrow}
+          title={t.home.stackTitle}
         />
         <div className="skill-cloud">
           {skills.slice(0, 18).map((skill) => (
