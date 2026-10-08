@@ -9,20 +9,20 @@ import {
 } from "../data/portfolio.js";
 import { SectionHeader } from "../components/SectionHeader.jsx";
 
-export function About() {
+export function About({ t }) {
   return (
     <>
       <section className="page-hero section">
-        <span className="eyebrow">About</span>
-        <h1>Backend engineer focused on scalable APIs, payments, and distributed systems.</h1>
-        <p>{profile.summary}</p>
+        <span className="eyebrow">{t.about.eyebrow}</span>
+        <h1>{t.about.title}</h1>
+        <p>{t.profile.summary}</p>
       </section>
 
       <section className="about-layout section compact">
         <aside className="profile-card">
           <img src="images/photo.png" alt={profile.name} />
           <h2>{profile.name}</h2>
-          <p>{profile.title}</p>
+          <p>{t.profile.title}</p>
           <div className="profile-list">
             <span>
               <MapPin size={18} /> {profile.location}
@@ -35,9 +35,9 @@ export function About() {
 
         <div className="content-card">
           <SectionHeader
-            eyebrow="Core skills"
-            title="Backend depth with fullstack execution."
-            description="The current focus is backend-heavy engineering: payments, API design, data stores, service decomposition, and production quality."
+            eyebrow={t.about.coreSkills}
+            title={t.about.coreTitle}
+            description={t.about.coreDescription}
           />
           <div className="skill-cloud">
             {skills.map((skill) => (
@@ -49,9 +49,9 @@ export function About() {
 
       <section className="section">
         <SectionHeader
-          eyebrow="Experience"
-          title="Professional timeline"
-          description="Recent work spans payment gateway systems, fintech microservices, instruction, and real-time monitoring products."
+          eyebrow={t.about.experience}
+          title={t.about.experienceTitle}
+          description={t.about.experienceDescription}
         />
         <div className="timeline">
           {experiences.map((job) => (
@@ -81,7 +81,7 @@ export function About() {
 
       <section className="section two-column">
         <article className="content-card">
-          <SectionHeader eyebrow="Education" title="Training and formal background" />
+          <SectionHeader eyebrow={t.about.education} title={t.about.educationTitle} />
           <ul className="clean-list">
             {education.map((item) => (
               <li key={item}>
@@ -92,7 +92,7 @@ export function About() {
         </article>
 
         <article className="content-card">
-          <SectionHeader eyebrow="Languages" title="Communication" />
+          <SectionHeader eyebrow={t.about.languages} title={t.about.communication} />
           <ul className="clean-list">
             {languages.map((item) => (
               <li key={item.name}>
@@ -106,9 +106,9 @@ export function About() {
       <section className="section">
         <article className="content-card">
           <SectionHeader
-            eyebrow="ATS keywords"
-            title="Search-friendly expertise"
-            description="Keywords are kept visible for recruiters and automated profile screening."
+            eyebrow={t.about.ats}
+            title={t.about.atsTitle}
+            description={t.about.atsDescription}
           />
           <div className="skill-cloud keyword-cloud">
             {atsKeywords.map((keyword) => (

@@ -65,18 +65,22 @@ function getProjectGallery(project) {
   }));
 }
 
-export function Work() {
-  const [category, setCategory] = useState("All");
+export function Work({ t }) {
+  const [category, setCategory] = useState(t.common.all);
   const [gallery, setGallery] = useState(null);
   const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    setCategory(t.common.all);
+  }, [t.common.all]);
   const categories = useMemo(
-    () => ["All", ...Array.from(new Set(projects.map((project) => project.category)))],
-    []
+    () => [t.common.all, ...Array.from(new Set(projects.map((project) => project.category)))],
+    [t.common.all]
   );
   const filteredProjects = useMemo(() => {
-    if (category === "All") return projects;
+    if (category === t.common.all) return projects;
     return projects.filter((project) => project.category === category);
-  }, [category]);
+  }, [category, t.common.all]);
 
   const activeImage = gallery?.images[activeSlide];
 
@@ -116,16 +120,13 @@ export function Work() {
   return (
     <>
       <section className="page-hero section">
-        <span className="eyebrow">Work</span>
-        <h1>Selected portfolio across backend, fullstack, and frontend products.</h1>
-        <p>
-          Legacy project links are preserved, while the UI is reorganized into
-          a modern card grid with categories and clear project actions.
-        </p>
+        <span className="eyebrow">{t.work.eyebrow}</span>
+        <h1>{t.work.title}</h1>
+        <p>{t.work.description}</p>
       </section>
 
       <section className="section compact">
-        <div className="filter-bar" role="tablist" aria-label="Project filters">
+        <div className="filter-bar" role="tablist" aria-label={t.work.filters}>
           {categories.map((item) => (
             <button
               key={item}
@@ -141,8 +142,8 @@ export function Work() {
 
       <section className="section compact">
         <SectionHeader
-          eyebrow={`${filteredProjects.length} projects`}
-          title="Project archive"
+          eyebrow={`${filteredProjects.length} ${t.work.projects}`}
+          title={t.work.archive}
         />
         <div className="project-grid">
           {filteredProjects.map((project) => {
@@ -157,7 +158,7 @@ export function Work() {
                     setGallery({ project, images });
                     setActiveSlide(0);
                   }}
-                  aria-label={`Open ${project.name} screenshots`}
+                  aria-label={`${project.name} ${t.work.screenshots}`}
                 >
                   <img src={project.image} alt={`${project.name} preview`} loading="lazy" />
                   <span className="gallery-badge">
@@ -186,7 +187,7 @@ export function Work() {
                     </a>
                   ) : (
                     <span className="private-link">
-                      <LockKeyhole size={17} /> {project.sourceLabel || "Private"}
+                      <LockKeyhole size={17} /> {project.sourceLabel || t.common.private}
                     </span>
                   )}
                 </div>
@@ -198,25 +199,25 @@ export function Work() {
       </section>
 
       {gallery ? (
-        <div className="gallery-modal" role="dialog" aria-modal="true" aria-label={`${gallery.project.name} screenshots`}>
-          <button className="gallery-backdrop" type="button" aria-label="Close gallery" onClick={closeGallery} />
+        <div className="gallery-modal" role="dialog" aria-modal="true" aria-label={`${gallery.project.name} ${t.work.screenshots}`}>
+          <button className="gallery-backdrop" type="button" aria-label={t.work.close} onClick={closeGallery} />
           <div className="gallery-dialog">
             <div className="gallery-header">
               <div>
                 <span className="eyebrow">{gallery.project.category}</span>
                 <h2>{gallery.project.name}</h2>
               </div>
-              <button className="icon-button" type="button" aria-label="Close gallery" onClick={closeGallery}>
+              <button className="icon-button" type="button" aria-label={t.work.close} onClick={closeGallery}>
                 <X size={22} />
               </button>
             </div>
 
             <div className="gallery-stage">
-              <button className="gallery-nav previous" type="button" aria-label="Previous screenshot" onClick={showPrevious}>
+              <button className="gallery-nav previous" type="button" aria-label={t.work.previous} onClick={showPrevious}>
                 <ChevronLeft size={28} />
               </button>
               <img src={activeImage.src} alt={`${gallery.project.name} - ${activeImage.label}`} />
-              <button className="gallery-nav next" type="button" aria-label="Next screenshot" onClick={showNext}>
+              <button className="gallery-nav next" type="button" aria-label={t.work.next} onClick={showNext}>
                 <ChevronRight size={28} />
               </button>
             </div>

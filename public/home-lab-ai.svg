@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Home Lab AI Hermes and 9router architecture</title>
+  <desc id="desc">Diagram showing separate private and office project workspaces connected through 9router to Hermes Agent and local or hosted AI providers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#08090a"/><stop offset="1" stop-color="#111827"/></linearGradient>
+    <linearGradient id="violet" x1="0" x2="1"><stop stop-color="#5e6ad2"/><stop offset="1" stop-color="#7170ff"/></linearGradient>
+    <linearGradient id="cyan" x1="0" x2="1"><stop stop-color="#0e7490"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000" flood-opacity=".35"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#93c5fd"/></marker>
+  </defs>
+  <rect width="1600" height="900" rx="36" fill="url(#bg)"/>
+  <circle cx="1390" cy="110" r="260" fill="#4f46e5" opacity=".15"/>
+  <circle cx="180" cy="760" r="260" fill="#0891b2" opacity=".12"/>
+  <text x="90" y="105" fill="#f7f8f8" font-family="Inter,Arial,sans-serif" font-size="48" font-weight="700">Private AI Home Lab</text>
+  <text x="90" y="150" fill="#a5b4fc" font-family="Inter,Arial,sans-serif" font-size="23">Hermes Agent + 9router • satu fondasi, dua ruang kerja</text>
+  <g filter="url(#shadow)">
+    <rect x="90" y="245" width="330" height="350" rx="24" fill="#171923" stroke="#475569"/>
+    <rect x="460" y="245" width="330" height="350" rx="24" fill="#171923" stroke="#475569"/>
+    <rect x="830" y="205" width="360" height="430" rx="28" fill="url(#violet)"/>
+    <rect x="1230" y="245" width="280" height="350" rx="24" fill="#171923" stroke="#475569"/>
+  </g>
+  <g fill="#f7f8f8" font-family="Inter,Arial,sans-serif">
+    <text x="125" y="300" font-size="20" fill="#67e8f9" font-weight="700">WORKSPACE 01</text>
+    <text x="125" y="348" font-size="34" font-weight="700">Kantor</text>
+    <text x="125" y="392" font-size="18" fill="#cbd5e1">Project, SOP, dan akses tim</text>
+    <text x="125" y="455" font-size="20">• Dokumen kantor</text><text x="125" y="492" font-size="20">• Workflow terkontrol</text><text x="125" y="529" font-size="20">• Audit &amp; izin akses</text>
+    <text x="495" y="300" font-size="20" fill="#67e8f9" font-weight="700">WORKSPACE 02</text>
+    <text x="495" y="348" font-size="34" font-weight="700">Pribadi</text>
+    <text x="495" y="392" font-size="18" fill="#cbd5e1">Eksperimen dan otomasi personal</text>
+    <text x="495" y="455" font-size="20">• Catatan pribadi</text><text x="495" y="492" font-size="20">• Coding &amp; riset</text><text x="495" y="529" font-size="20">• Memori terpisah</text>
+    <text x="875" y="278" font-size="20" fill="#ddd6fe" font-weight="700">CONTROL PLANE</text>
+    <text x="875" y="335" font-size="42" font-weight="700">9router</text>
+    <text x="875" y="380" font-size="18" fill="#ede9fe">Satu pintu untuk model</text>
+    <text x="875" y="448" font-size="22">Routing provider</text><text x="875" y="490" font-size="22">Fallback &amp; key rotation</text><text x="875" y="532" font-size="22">Observability biaya</text><text x="875" y="574" font-size="22">Policy per workspace</text>
+    <text x="1270" y="300" font-size="20" fill="#67e8f9" font-weight="700">AI LAYER</text>
+    <text x="1270" y="350" font-size="27" font-weight="700">Model</text>
+    <text x="1270" y="410" font-size="20">• Local / Ollama</text><text x="1270" y="450" font-size="20">• API provider</text><text x="1270" y="490" font-size="20">• Model sesuai tugas</text><text x="1270" y="530" font-size="20">• Data tetap terkendali</text>
+  </g>
+  <g stroke="#93c5fd" stroke-width="5" fill="none" marker-end="url(#arrow)"><path d="M420 420 H820"/><path d="M790 490 H820"/><path d="M1190 420 H1220"/></g>
+  <g transform="translate(90 710)"><rect width="1420" height="90" rx="18" fill="#0f172a" stroke="#334155"/><text x="30" y="38" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="20">Hermes Agent menjadi lapisan kerja: tools, memory, skills, automasi, dan kanal komunikasi.</text><text x="30" y="68" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="18">Workspace kantor dan pribadi dipisahkan secara logis; desain final mengikuti kebutuhan jaringan, perangkat, dan kebijakan client.</text></g>
+</svg>
